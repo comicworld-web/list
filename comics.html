@@ -47,7 +47,7 @@
                     <div class="cover-wrapper">
                         <span class="badge">Vol 1 | Issue 1</span>
                         <span class="status-badge" style="background: #ff0f39;">New Release</span>
-                        <img src="assets/N1.png" alt="ஆகர்ஷிணியின் ஈர இரவு">
+                        <video src="assets/N1.webm" alt="ஆகர்ஷிணியின் ஈர இரவு" autoplay loop muted playsinline></video>
                     </div>
                     <div class="card-details">
                         <div style="font-size: 0.9rem; color: var(--accent-gold); margin-bottom: 0.2rem;">மழை தொடங்கிய
@@ -64,9 +64,10 @@
                             <div class="btn-group">
                                 <a href="https://bindaaslinks.com/isKFD" target="_blank" class="btn btn-read"><i
                                         class="fas fa-book-open"></i> Read</a>
-                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSc4pD4F9KwVbglyiaTP-AQQhL29JrShkclHRepSA1PhS4ufAQ/viewform?pli=1"
-                                    target="_blank" class="btn btn-download"><i class="fas fa-download"></i>
-                                    Download</a>
+                                <button class="btn btn-buy"
+                                    onclick="openBuyModal('ஆகர்ஷிணியின் ஈர இரவு - Vol 1 | Issue 1', 'comic')"><i
+                                        class="fas fa-shopping-cart"></i>
+                                    Buy</button>
                             </div>
                             <a href="https://docs.google.com/forms/d/e/1FAIpQLSc4pD4F9KwVbglyiaTP-AQQhL29JrShkclHRepSA1PhS4ufAQ/viewform?pli=1"
                                 target="_blank" class="btn btn-print"><i class="fas fa-print"></i> Order Printed
@@ -82,7 +83,7 @@
                     <div class="cover-wrapper">
                         <span class="badge">Vol 1 | Issue 2</span>
                         <span class="status-badge" style="background: #ff0f39;">New Release</span>
-                        <img src="assets/N2.png" alt="ஆகர்ஷிணியின் ஈர இரவு">
+                        <video src="assets/N2.webm" alt="ஆகர்ஷிணியின் ஈர இரவு" autoplay loop muted playsinline></video>
                     </div>
                     <div class="card-details">
                         <div style="font-size: 0.9rem; color: var(--accent-gold); margin-bottom: 0.2rem;">மழைச்
@@ -97,11 +98,43 @@
                         <div class="card-actions">
                             <div class="btn-group">
                                 <a href="#" class="btn btn-read"><i class="fas fa-book-open"></i> Read</a>
-                                <a href="#" class="btn btn-download"><i class="fas fa-download"></i> Download</a>
+                                <button class="btn btn-buy"
+                                    onclick="openBuyModal('ஆகர்ஷிணியின் ஈர இரவு - Vol 1 | Issue 2', 'comic')"><i
+                                        class="fas fa-shopping-cart"></i> Buy</button>
                             </div>
                             <a href="https://docs.google.com/forms/d/e/1FAIpQLSc4pD4F9KwVbglyiaTP-AQQhL29JrShkclHRepSA1PhS4ufAQ/viewform?pli=1"
                                 target="_blank" class="btn btn-print"><i class="fas fa-print"></i> Order Printed
                                 Copy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tamil Comic Item 3 -->
+            <div class="card">
+                <div class="card-inner">
+                    <div class="cover-wrapper">
+                        <span class="badge">Vol 2 | Issue 1</span>
+                        <span class="status-badge" style="background: #ffa500;">Coming Soon</span>
+                        <video src="assets/N3.webm" alt="ஆகர்ஷிணியின் ஈர இரவு" autoplay loop muted playsinline></video>
+                    </div>
+                    <div class="card-details">
+                        <div style="font-size: 0.9rem; color: var(--accent-gold); margin-bottom: 0.2rem;">புதிய
+                            அத்தியாயம்</div>
+                        <h3 class="card-title" style="font-size: 0.9rem; white-space: normal; line-height: 1.3;">
+                            ஆகர்ஷிணியின் ஈர இரவு</h3>
+                        <div class="card-tags">
+                            <span class="tag">Romance</span>
+                            <span class="tag">Fantasy</span>
+                            <span class="tag">18+</span>
+                        </div>
+                        <div class="card-actions">
+                            <div class="btn-group">
+                                <a href="#" class="btn btn-read" style="opacity: 0.5; cursor: not-allowed;"><i
+                                        class="fas fa-clock"></i> Coming Soon</a>
+                            </div>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSc4pD4F9KwVbglyiaTP-AQQhL29JrShkclHRepSA1PhS4ufAQ/viewform?pli=1"
+                                target="_blank" class="btn btn-print"><i class="fas fa-bell"></i> Notify Me</a>
                         </div>
                     </div>
                 </div>
@@ -122,6 +155,69 @@
             <p>This site contains adult content. You must be 18+ to enter.</p>
         </div>
     </footer>
+
+    <!-- Buy Modal -->
+    <div id="buyModal" class="modal-overlay">
+        <div class="buy-modal">
+            <div class="modal-header">
+                <h2>Purchase Book</h2>
+                <button class="close-modal" onclick="closeBuyModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="buyForm" onsubmit="submitBuyForm(event)">
+                <div class="form-group">
+                    <label>Book Name</label>
+                    <input type="text" id="bookName" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label>Language</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="language" value="English">
+                            <span>English</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="language" value="Tamil">
+                            <span>Tamil</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Format</label>
+                    <div id="formatOptions" class="checkbox-group-vertical">
+                        <!-- Will be populated dynamically -->
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Telegram ID <span class="optional">(Optional - but either Telegram or Email
+                            required)</span></label>
+                    <input type="text" id="telegramId" placeholder="@username">
+                </div>
+
+                <div class="form-group">
+                    <label>Email ID <span class="optional">(Optional - but either Telegram or Email
+                            required)</span></label>
+                    <input type="email" id="emailId" placeholder="your@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label>Name <span class="required">*</span></label>
+                    <input type="text" id="userName" required placeholder="Your full name">
+                </div>
+
+                <div class="form-total">
+                    <strong>Total: ₹<span id="totalPrice">0</span></strong>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-submit">Submit Order</button>
+            </form>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 
